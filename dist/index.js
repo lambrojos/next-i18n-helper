@@ -124,6 +124,10 @@ var I18nHelper = function () {
         //from cookie
         var fromCookie = req ? req.cookies ? req.cookies[that.langCookieName] : _this.defaultLang : _jsCookie2.default.get(that.langCookieName);
 
+        if (!fromCookie) {
+          fromCookie = _this.defaultLang;
+        }
+
         if (that.supportLangs.includes(fromCookie)) return fromCookie;
 
         var supported = new _locale2.default.Locales(that.supportLangs, that.defaultLang);

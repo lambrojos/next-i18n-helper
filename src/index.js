@@ -71,7 +71,7 @@ export default class I18nHelper {
     var that = this
     var getCurrentLang = () => {
       //from cookie
-      var fromCookie = req ? (req.cookies?req.cookies[that.langCookieName]:'') : Cookies.get(that.langCookieName)
+      var fromCookie = req ? (req.cookies?req.cookies[that.langCookieName] : this.defaultLang) : Cookies.get(that.langCookieName)
 
       if (that.supportLangs.includes(fromCookie)) return fromCookie
 
